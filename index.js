@@ -18,8 +18,14 @@ function removeTodo(item) {
   todos.pop();
 }
 
-function editTodo(item, edit) {
-  todos[item] = edit;
+function editTodo(item, element, edit) {
+  if (element == "title"){
+    todos[item].title = edit;}
+    else {
+      if (element == "description"){
+        todos[item].description = edit
+      }
+    }
 }
 
 function markTodoComplete(item) {
@@ -63,5 +69,8 @@ addTodo();
 addTodo();
 removeTodo();
 markTodoComplete(2);
+editTodo(1, "title", "Second To-do")
+editTodo(2, "title", "Third To-do")
+editTodo(2, "description", "This is the third to-do")
 app();
 
